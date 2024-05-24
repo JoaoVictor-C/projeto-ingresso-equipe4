@@ -101,7 +101,7 @@ public class IngressoDao
             _connection.Open();
             const string query = "SELECT * FROM ingressos " +
                                  "JOIN lote ON ingressos.lote_id = lote.id " +
-                                 "WHERE lote.evento_id = @evento_id AND ingressos.status = 'Validado' OR 'Utilizado'";
+                                 "WHERE lote.evento_id = @evento_id AND ingressos.status = 'Validado' OR 'Utilizado' OR 'Pendente'";
             var command = new MySqlCommand(query, _connection);
             command.Parameters.AddWithValue("@evento_id", eventoId);
             ingressos = ReadAll(command);
