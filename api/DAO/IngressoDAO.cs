@@ -101,7 +101,7 @@ public class IngressoDao
             _connection.Open();
             const string query = "SELECT * FROM ingressos " +
                                  "JOIN lote ON ingressos.lote_id = lote.id " +
-                                 "WHERE lote.evento_id = @evento_id";
+                                 "WHERE lote.evento_id = @evento_id AND ingressos.status = 'Validado' OR 'Utilizado'";
             var command = new MySqlCommand(query, _connection);
             command.Parameters.AddWithValue("@evento_id", eventoId);
             ingressos = ReadAll(command);
@@ -439,10 +439,11 @@ public class IngressoDao
     public int CountIngressoByTipo(string tipo)
     {
         int quantidadeIngresso = 0;
+
         try
         {
             _connection.Open();
-            const string query = "SELECT COUNT(*) FROM ingressos WHERE tipo = @Tipo;";
+            const string query = "SELECT COUNT(*) FROM ingressos WHERE tipo = @Tipo AND ingressos.status = 'Validado' OR 'Utilizado';";
             var command = new MySqlCommand(query, _connection);
             command.Parameters.AddWithValue("@Tipo", tipo);
             using (var reader = command.ExecuteReader())
