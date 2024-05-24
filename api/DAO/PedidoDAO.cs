@@ -180,9 +180,11 @@ public class PedidoDao
         {
             _connection.Open();
             var command = new MySqlCommand(query, _connection);
-        
+
+            DateTime dataCadastro = DateTime.Now;
+
             command.Parameters.AddWithValue("@usuarios_id", pedido.UsuariosId);
-            command.Parameters.AddWithValue("@data_cadastro", pedido.DataCadastro);
+            command.Parameters.AddWithValue("@data_cadastro", dataCadastro);
             command.Parameters.AddWithValue("@total", pedido.Total);
             command.Parameters.AddWithValue("@Quantidade", pedido.Quantidade);
             command.Parameters.AddWithValue("@forma_pagamento", pedido.FormaPagamento);
