@@ -436,14 +436,17 @@ public class IngressoDao
     }
 
 
-    public int CountIngressoByTipo(string tipo)
+    public int CountIngressoByTipo(string tipo, int eventoId)
     {
         int quantidadeIngresso = 0;
 
         try
         {
             _connection.Open();
-            const string query = "SELECT COUNT(*) FROM ingressos WHERE tipo = @Tipo AND ingressos.status = 'Validado' OR 'Utilizado';";
+            const string query = "SELECT COUNT(*) FROM ingressos WHERE tipo = @Tipo AND ingressos.status != 'Cancelado' " +
+                                 "INNER JOIN lote ON lote.id = ingressos.lote_id " +
+                                "INNER JOIN evento ON evento.id = lote.evento_id " +
+                                "WHERE evento.id = @EventoId;";
             var command = new MySqlCommand(query, _connection);
             command.Parameters.AddWithValue("@Tipo", tipo);
             using (var reader = command.ExecuteReader())
