@@ -443,12 +443,14 @@ public class IngressoDao
         try
         {
             _connection.Open();
-            const string query = "SELECT COUNT(*) FROM ingressos WHERE tipo = @Tipo AND ingressos.status != 'Cancelado' " +
+            const string query = "SELECT COUNT(*) FROM ingressos  " +
                                  "INNER JOIN lote ON lote.id = ingressos.lote_id " +
                                 "INNER JOIN evento ON evento.id = lote.evento_id " +
-                                "WHERE evento.id = @EventoId;";
+                                "WHERE evento.id = @EventoId AND ingressos.status != 'Cancelado' AND ingressos.tipo = @Tipo;";
+
             var command = new MySqlCommand(query, _connection);
             command.Parameters.AddWithValue("@Tipo", tipo);
+            command.Parameters.AddWithValue("@EventoId", eventoId);
             using (var reader = command.ExecuteReader())
             {
                 if (reader.Read())

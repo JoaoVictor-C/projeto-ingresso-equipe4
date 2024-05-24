@@ -124,7 +124,7 @@ public class IngressoController : ControllerBase
         var quantidadePorTipo = new Dictionary<string, int>();
         foreach (var tipo in tiposIngressos)
         {
-            var quantidade = _ingressoDao.CountIngressoByTipo(tipo);
+            var quantidade = _ingressoDao.CountIngressoByTipo(tipo, id);
             quantidadePorTipo.Add(tipo, quantidade);
         }
         return Ok(new { quantidadePorTipo, ingressos = _ingressoDao.ReadByEventoId(id) });
