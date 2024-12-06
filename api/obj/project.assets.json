@@ -2235,24 +2235,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Joao Victor\\.nuget\\packages\\": {}
+    "C:\\Users\\Roger.Diegoli\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\JoaoVictor\\Estudos\\SENAI\\projeto-ingresso-equipe4\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\Roger.Diegoli\\Desktop\\Roger\\CloneRepository\\projeto-ingresso-equipe4\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\JoaoVictor\\Estudos\\SENAI\\projeto-ingresso-equipe4\\api\\api.csproj",
-      "packagesPath": "C:\\Users\\Joao Victor\\.nuget\\packages\\",
-      "outputPath": "C:\\JoaoVictor\\Estudos\\SENAI\\projeto-ingresso-equipe4\\api\\obj\\",
+      "projectPath": "C:\\Users\\Roger.Diegoli\\Desktop\\Roger\\CloneRepository\\projeto-ingresso-equipe4\\api\\api.csproj",
+      "packagesPath": "C:\\Users\\Roger.Diegoli\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Roger.Diegoli\\Desktop\\Roger\\CloneRepository\\projeto-ingresso-equipe4\\api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Joao Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Roger.Diegoli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2308,7 +2315,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
